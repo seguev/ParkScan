@@ -112,7 +112,12 @@ class PreviewViewController: UIViewController {
     }
     
     @IBAction func tryAgainPressed(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        
+        if let navigationController {
+            navigationController.popToRootViewController(animated: true)
+        } else {
+            dismiss(animated: true)
+        }
     }
     
 }
